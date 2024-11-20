@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { PlayerInt } from "../types/GlobalTypes";
 
-const Player: React.FC<PlayerInt> = ({ initialName, mark }) => {
+const Player: React.FC<PlayerInt> = ({ initialName, mark, isActive }) => {
   const [playerName, setPlayerName] = useState<string>(initialName);
   const [isEditing, setIsEditing] = useState<boolean>(false);
 
@@ -14,7 +14,7 @@ const Player: React.FC<PlayerInt> = ({ initialName, mark }) => {
   };
 
   return (
-    <li>
+    <li className={isActive ? "active" : undefined}>
       <span className="player">
         {isEditing ? (
           <input
