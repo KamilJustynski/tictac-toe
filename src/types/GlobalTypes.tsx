@@ -6,7 +6,7 @@ export interface PlayerInt {
 
 export interface GameBoardInt {
   onSelectSquare: (row: number, col: number) => void;
-  turns: GameTurnInt[];
+  board: string[][];
 }
 
 export interface GameTurnInt {
@@ -15,4 +15,8 @@ export interface GameTurnInt {
     col: number;
   };
   player: string;
+}
+
+export interface LogInt {
+  turns: GameTurnInt[];
 }
